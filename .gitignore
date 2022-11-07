@@ -1,11 +1,8 @@
 # git ignore
 
 # Not Current Used
-/old
-
 
 # By Folder
-old/**
 **/ppt
 **/pdf
 debug/
