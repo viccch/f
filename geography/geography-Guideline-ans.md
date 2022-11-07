@@ -392,7 +392,7 @@ toc: true
 - 土壤的物质组成（key point）
   - 三相四成分
 $$\left \{
-  \begin{align*}
+  \begin{aligned}
   &{固相
     \left  \{
     \begin{aligned}
@@ -402,7 +402,7 @@ $$\left \{
     \right .}\\
   &液相\\
   &气相
-  \end{align*}
+  \end{aligned}
 \right.$$
 
 
