@@ -1,0 +1,557 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>&quot;GNSS-Chapter 1 Introduction&quot;</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h1><a name="chapter-1--inroduction" class="md-header-anchor"></a><span>Chapter 1 : Inroduction</span></h1><h2><a name="概述" class="md-header-anchor"></a><span>概述</span></h2><h3><a name="定义" class="md-header-anchor"></a><span>定义</span></h3><p><span>  全球卫星导航系统(Global Navigation Satellite System, GNSS)是所有卫星导航系统的</span><em><span>总称</span></em><span>，包括</span><strong><span>全球的</span></strong><span>、</span><strong><span>区域的</span></strong><span>和</span><strong><span>相关的增强系统</span></strong><span>，以及在建的其他卫星导航系统。目前，GNSS主要包括：</span></p><ul><li><span>美国的全球定位系统（GPS）</span></li><li><span>中国的北斗卫星导航系统（BDS）</span></li><li><span>俄罗斯的格洛纳斯卫星导航系统（GLONASS）</span></li><li><span>欧洲的伽利略卫星导航系统（Galileo）</span></li><li><span>日本额准天顶系统（QZSS）（区域的）</span></li><li><span>印度星座导航系统（NavIC）（区域的）  </span></li></ul><h3><a name="意义" class="md-header-anchor"></a><span>意义</span></h3><p><span>GNSS技术可以为广大用户提供实时、连续、高精度的定位、导航和授时服务，广泛应用于社会公共服务、军事、测绘以及科研等领域。目前，它已经成为促进社会发展的重要空间基础设施，是体现国家综合实力的重要标志。</span></p><h3><a name="gps相对于经典大地测量的特点" class="md-header-anchor"></a><span>GPS相对于经典大地测量的特点</span></h3><ul><li><span>选点灵活，无需通视</span></li><li><span>定位精度高</span></li><li><span>观测时间短</span></li><li><span>提供三维坐标</span></li><li><span>操作简便</span></li><li><span>全天候作业</span></li></ul><h2><a name="gps全球定位系统" class="md-header-anchor"></a><span>GPS全球定位系统</span></h2><h3><a name="定义-n202" class="md-header-anchor"></a><span>定义</span></h3><p><span>Navigation Satellite Timing and Ranging/Global Positioning System, NAVSTAR/GPS)，简称GPS系统。是一个中距离圆型轨道卫星导航系统。它可以向全球用户提供连续、实时、高精度的空间位置、三维速度和时间信息。</span></p><h3><a name="gps系统发展" class="md-header-anchor"></a><span>GPS系统发展</span></h3><h4><a name="基础建设阶段" class="md-header-anchor"></a><span>基础建设阶段：</span></h4><ul><li><span>1973年12月，美国国防部批准实施</span></li><li><span>1973年-1993年分阶段性实施</span></li><li><span>1993年7月，在轨24颗卫星，具备全球连续导航定位能力</span></li><li><span>Block I试验卫星和Block II、Block IIA型工作卫星</span></li><li><span>1995年4月，宣布具备完全作战能</span></li></ul><h4><a name="完善阶段" class="md-header-anchor"></a><span>完善阶段：</span></h4><ul><li><span>1997年，美国开始发射GPS Block IIR卫星。</span></li><li><span>2000年5月，美国取消了GPS卫星民用信道限制政策</span></li><li><span>民用GPS的定位精度达到平均6.2米</span></li></ul><h4><a name="现代化阶段" class="md-header-anchor"></a><span>现代化阶段：</span></h4><p><span>（实质是要加强GPS对美军现代化战争中的支撑和保持GPS在全球民用导航领域中的霸主地位，目标是改善抗干扰能力并增强安全性。）</span></p><ul><li><span>增加新的GPS信号。2005-2008年发射8颗改进的导航卫星Block IIR-M，在卫星上播发新的军码和第二民码，同时在2006-2018年发射的卫星Block IIF上增设第三民码。- 研发新一代军用GPS接收机，提高GPS的抗干扰能力。- 实施GPSⅢ计划。GPSⅢ全部卫星在轨运行计划将在2018年实现。与现有GPS相比，GPSⅢ的信号发射功率将提高100倍，信号抗干扰能力提高1000倍以上，授时精度将达到1纳秒，定位精度提高到0.63米</span></li></ul><h3><a name="gps-系统组成" class="md-header-anchor"></a><span>GPS 系统组成</span></h3><ul><li><span>空间部分：提供星历（epoch）和时间信息，发送伪距（Code Pseudo-range）和载波（carrier phase）信号，提供其他辅助信息。</span></li><li><span>地面控制部分：中心控制系统，实现时间同步，跟踪卫星进行定轨。</span></li><li><span>用户设备部分：接收卫星信号，记录处理数据。</span></li></ul><h4><a name="地面控制系统" class="md-header-anchor"></a><span>地面控制系统</span></h4><p><span>地面控制系统由1个主控站、3个注入站和5个监测站组成。主控站设置在科罗拉多斯普林斯的联合空间执行中心。3个注入站设在大西洋阿林松、印度洋迭戈加西亚和太平洋夸贾林。5个监测站除了分布在主控站、注入站外，还在夏威夷设置1个监测站。 </span>
+<span>监测站作用：向卫星发布指令，控制卫星，调度卫星工作。计算卫星星历和卫星钟的改正参数等，并将解算文件发送给主控站。</span></p><h4><a name="gps-卫星星座空间部分）" class="md-header-anchor"></a><span>GPS 卫星星座（空间部分）</span></h4><ul><li><span>21颗工作卫星+3颗在轨备用卫星</span></li><li><span>均匀分布在6个轨道平面上</span></li><li><span>卫星轨道平面的倾角约为55º</span></li><li><span>各轨道平面升交点的赤经相差60º</span></li><li><span>相邻轨道卫星的升交距角相差30º</span></li><li><span>轨道平均高度约为20200km</span></li><li><span>卫星运行周期为</span><strong><span>11小时58分钟</span></strong></li></ul><h5><a name="卫星分布的特点" class="md-header-anchor"></a><span>卫星分布的特点：</span></h5><ul><li><span>保证了地面上任何时间、任何地点至少可同时观测到4颗卫星。</span></li><li><span>统一观测站上每天出现的卫星分布图形相同，只是每天提前约4分钟。</span></li><li><span>每颗卫星每天约有5个小时在地平线以上。</span></li><li><span>同时位于地平线以上的卫星数目视时间和地点而定，最少为4颗，最多可达12颗。</span></li></ul><h5><a name="gps卫星的基本功能" class="md-header-anchor"></a><span>GPS卫星的基本功能</span></h5><ul><li><span>向广大的用户连续不断地发射卫星导航定位信号（简称GPS信号），并用导航电文报告自己的详细位置以及其他在轨卫星的概略位置；</span></li><li><span>在飞越注入站上空时，接受由地面注入站发送到卫星的导航电文和其他有关信息，并通过GPS信号，适时的发送给广大的用户。</span></li><li><span>接受地面主控站通过注入站发送到卫星的调度命令。如适时的改正运行的偏差，或者启用备用时钟等。</span></li><li><span>通过星载高精度原子钟，提供精确的时间标准，使各卫星处于同一时间标准—GPS时。</span></li></ul><h4><a name="地面监控系统控制端）" class="md-header-anchor"></a><span>地面监控系统（控制端）</span></h4><p><span>支持整个GPS系统正常运行的地面设施称为地面监控部分，包括1个数控站，一个备用主控站，11个注入站，16个监测站以及通信和辅助系统。</span></p><h5><a name="地面监控系统的主要作用" class="md-header-anchor"></a><span>地面监控系统的主要作用：</span></h5><ul><li><span>提供GPS卫星所播发的星历。</span></li><li><span>检测和控制GPS卫星的健康状态。</span></li><li><span>保持各个卫星处于统一时间标准，即处于GPS时间系统。</span></li></ul><h4><a name="gps-型号接收机用户端" class="md-header-anchor"></a><span>GPS 型号接收机（用户端)</span></h4><p><span>GPS用户端是指GPS信号接收机，它是能接收、处理、量测GPS卫星信号于进行导航、定位、定轨、授时等多项工作的设备仪器。GPS接收器由带前置放大器的接收天线、信号处理设备、输入输出设备、电源和微处理器等部件组成。</span></p><h5><a name="gps信号接收机的作用" class="md-header-anchor"></a><span>GPS信号接收机的作用</span></h5><ul><li><span>当GPS卫星在用户视界升起时，接收机能够捕获到按一定卫星截止高度角所选择的待测卫星，并能够跟踪这些卫星的运动。</span></li><li><span>对所接收到的GPS信号具有变换、放大和处理的功能，以便测量出GPS信号从卫星到接收机天线的传播时间，解译出GPS卫星所发射的导航电文，实时地计算出测站的三维位置，甚至三维速度和时间，从而实现导航和定位。</span></li></ul><h2><a name="北斗卫星导航系统" class="md-header-anchor"></a><span>北斗卫星导航系统</span></h2><h4><a name="定义-n295" class="md-header-anchor"></a><span>定义</span></h4><p><span>北斗卫星导航系统﹝BeiDou Navigation Satellite System，BDS﹞是我国正在实施的自主研发、独立运行的卫星导航系统，其目标是在全球范围内全天候、全天时为各类用户提供高精度、高可靠的定位、导航、授时服务，与GPS不同的是，它还兼具短报文通信能力。</span></p><h4><a name="建设步骤" class="md-header-anchor"></a><span>建设步骤</span></h4><ul><li><span>第一步，北斗卫星导航试验系统——北斗一号。1994年，中国启动北斗卫</span>
+<span>星导航试验系统建设；2000年相继发射2颗“北斗”导航试验卫星，2003年发射第3颗“北斗”导航试验卫星，建成“北斗”卫星导航试验系统，成为世界上第3个拥有自</span>
+<span>主卫星导航系统的国家。北斗卫星导航试验系统空间星座部分包括3颗地球静止轨道卫星，分别定点于东经80°、110.5°和140°赤道上空。  </span></li><li><span>第二步，北斗卫星导航区域系统——北斗二号。主要功能和性能指标：①主要功能：定位、测速、单双向授时、短报文通信；②服务区域：中国及周边地区；③定位精度：平面10m，高程10m；④测速精度：优于0.2m/s；⑤授时精度：单向50ns；⑥短报文通信：120个汉字/次。2004年中国启动北斗卫星导航系统工程建设，2012年底完成5颗GEO卫星、5颗IGSO卫星和4颗MEO卫星,具备区域服务能力。  </span></li><li><span>第三步，北斗卫星导航全球系统——北斗三号。2020年左右全面建成北斗卫星导航系统，为全球用户提供卫星定位、导航和授时服务，并为我国及周边地区用户提供定位精度1m的广域差分服务和120个汉字/次的短报文通信服务。主要功能和性能指标： ①主要功能：定位、测速、单双向授时、短报文通信；②服务区域：全球；③定位精度：优于10m；④测速精度：优于0.2m/s；⑤授时精度：20ns</span></li></ul><h4><a name="在轨卫星种类和数量" class="md-header-anchor"></a><span>在轨卫星种类和数量</span></h4><ul><li><span>地球同步（静止）轨道（GEO）卫星7颗</span></li><li><span>中圆地球轨道（MEO）卫星20颗</span></li><li><span>倾斜地球同步轨道（IGSO）卫星9颗</span></li></ul><h4><a name="通信频率" class="md-header-anchor"></a><span>通信频率</span></h4><p><span>北斗卫星导航系统采用CDMA扩频通信体制，卫星在B1（1561.098 MHz）、B2（1207.14 MHz）和B3（1268.52 MHz）三个频点上播发信号。也是目前唯一一个</span>
+<span>全星座均采用三频信号的卫星导航定位系统。  </span></p><h4><a name="bds-五大优势" class="md-header-anchor"></a><span>BDS 五大优势：</span></h4><ul><li><span>同时具备定位和通信功能，无需其他通信系统支持；</span></li><li><span>融合北斗导航定位系统和卫星导航增强系统两大资源，提供更丰富的增值服务；</span></li><li><span>覆盖中国及周边国家和地区，24小时全天候服务，无通信盲区；</span></li><li><span>定位解算都集中在地面控制中心站，特别适合于大范围移动监控与管理自主系统；</span></li><li><span>高强度加密设计，安全、可靠、稳定，适合关键部门使用</span></li></ul><h2><a name="glonass-卫星导航系统" class="md-header-anchor"></a><span>GLONASS 卫星导航系统</span></h2><p><span>GLONASS 是一种FDMA和CDMA技术结合的系统，信号上的导航电文经伪码扩频调制，不同的卫星信号上调至相同的伪码，并以此作为测距吗。</span><br/><span>频分多址(frequency division multiple access, FDMA)信号机制，通过每颗卫星在不同载波频率上发射信号来实现不同卫星的区分和辨认。</span></p><h2><a name="galileo-卫星导航系统-ignored" class="md-header-anchor"></a><span>Galileo 卫星导航系统 (Ignored)</span></h2><h2><a name="qzss-卫星导航系统-ignored" class="md-header-anchor"></a><span>QZSS 卫星导航系统 (Ignored)</span></h2><h2><a name="nacic-卫星导航系统-ignored" class="md-header-anchor"></a><span>NacIC 卫星导航系统 (Ignored)</span></h2></div>
+</body>
+</html>

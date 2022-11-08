@@ -1,0 +1,607 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>&quot;GNSS-Chapter 2 Coordinate and Time System&quot;</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h1><a name="chapter-2-coordinate-and-time-system" class="md-header-anchor"></a><span>Chapter 2 Coordinate and Time System</span></h1><ol start='' ><li><p><span>Which several important stages have been experienced during the development of coordinate reference system?</span>
+<span>（坐标参考系的发展过程中都经历了那几个重要阶段？）</span>
+<code>地心说、旋转椭球、大地水准面、参考椭球面、地心参考系</code></p></li><li><p><span>What is the direction of the development of coordinate reference system?(the mainline throughout the whole development of coordinate reference system)（贯穿整个坐标参考系发展的主线是什么？）</span>
+<code>更准确的认识地球，更精确的描述位置。</code></p></li><li><p><span>How to construct a coordinate reference system?</span>
+<span>（如何构造一个坐标参考系）</span>
+<span>为了在地球表面确定一个准确的位置，必须知道地球本身的形状与大小。</span>
+<span>确定空间参考系的类型确定地球的原点、基准面（参考椭球）、基准线（坐标轴方向）等定义量算方法。</span></p></li><li><p><span>How to construct a time reference system?</span>
+<span>（如何构造一个时间参考系）</span>
+<code>确定时间间隔;确定时间起始点</code></p></li><li><p><span>What are the rules of establishing a ellipsoid reference system?</span>
+<span>（建立一个椭球参考系的规则是什么）  </span></p><ol start='' ><li><span>The quality of ellipsoid is equal to that of the earth, and</span>
+<span>the rotating velocity at the same speed as the earth.  </span></li><li><span>The size of ellipsoid is equal to that of the earth, and</span>
+<span>the surface is closest to that of the earth.  </span></li><li><span>The center of ellipsoid coincides with that of the earth, </span>
+<span>and b axis coincides with the earth’s axis of rotation.</span><br/><span>椭球与地球的质量(mass)相等，具有相同的旋转速度。</span><br/><span>尺寸大小和地球相等，表面和地球最接近。</span><br/><span>椭球中心和地球重合，b轴作为地球的旋转轴。  </span></li></ol></li><li><p><span>What are the merits of geoid ellipsoid relative to geometry ellipsoid?</span>
+<span>（相对于几何椭球，大地水准面椭球的优势是什么）</span><br/><span>1.It is a clear determined and objective existence</span>
+<span>ellipsoid; (the one and only)</span><br/><span>2.It has the physical meaning of ellipsoid, where the </span>
+<span>gravity values of all points are same;</span><br/><span>3.It can be used as the datum of altitude  </span></p><ol start='' ><li><span>是明确确定的客观存在的椭球面。  </span></li><li><span>是有物理意义的椭球面，面上所有点的重力相等。  </span></li><li><span>能作为高程的基准。  </span></li></ol></li><li><p><span>How to convert the geodetic height to the altitude?</span>
+<span>（如何将大地高转换成正高）</span>
+<span>Geodetic height：大地高，地面点到参考椭球面距离</span>
+<span>Altitude：即正高，地面点到大地水准面的距离。</span>
+<span>Geodetic height减去当地参考椭球面与大地水准面之间的距离得到Altitude。</span></p></li><li><p><span>What are the differences between zero point and base point?</span>
+<span>（零点和基点的区别）</span>
+<code>水准零点是位于平均海水面、高程为0的点。水准原点是国家测算地面高程点的起算依据。根据1982国家高程基准，水准原点的高程是72.260m。</code></p></li><li><p><span>Why we need to set up reference-centric ellipsoid reference system?</span>
+<span>（为什么要建立参心椭球坐标系）</span>
+<code>参心椭球体与大地水准面具有确定的位置关系。是在局部范围内与大地水准面符合最好的理想椭球体。</code></p></li><li><p><span>What are the advantages and disadvantages of reference-centric ellipsoid and geocentric ellipsoid?</span>
+<span>（参心椭球和地心椭球的优点和缺点）</span>
+<code>参心椭球缺点：精度低；误差累积；静止状态；更新慢；局部范围符合好；</code>
+<code>地心椭球优点：精度高；无误差累积；动态状态；更新迅速；全球范围符合。</code></p></li><li><p><span>Which several important stage during the development of time reference system?</span>
+<span>（时间参考坐标系的发展过程中的几个重要阶段）</span>
+<code>从沙漏计时、滴水计时、日晷计时，到机械表计时，石英表计时（quartz每秒32768次震荡）,原子钟计时。</code></p></li><li><p><span>What are the GPS coordinate and time reference system?</span>
+<span>（GPS的坐标和时间参考系是什么）</span>
+<span>坐标参考系：WGS-84世界大地坐标系（World Geodetic System）。WGS-84 世界大地坐标系的几何定义是：原点是地球质心，Z 轴指 BIH1984.0 定义的协议地球极(CTP)方向，X 轴指向 BIH1984.0 的零子午面和 CTP 赤道的交点，Y 轴与 Z 轴、X 轴构成右手坐标系。上述 CTP 是协议地球极(Conventional Terrestrial Pole)的简称；由于极移现象的存在，地极的位置在地极平面坐标系中是一个连续的变量，其瞬时坐标由国际时间局(Bureau International de l’Heure 简称 BIH)定期向用户公布。WGS-84 世界大地坐标系就是以国际时间局 1984 年第一次公布的瞬时地极(BIH1984.0)作为基准建立的地球瞬时坐标系，严格来讲属于准协议地球坐标系。</span>
+<span>时间参考系：GPST 即GPS 时。GPS时间是GPS系统运作的时间基准，简称GPST，GPST本质还是原子时，其时间基准来源于GPS系统卫星上一些列的原子钟的测量频率。GPST的整秒进位时刻和UTC时间同步，虽然存在偏差但是这个偏差很小在10ns左右，与UTC不同的是，GPST是一个连续的时间系统，不存在跳秒问题，时间的起始是1980年1月6日0点0时0分0秒，所以GPST和UTC之间会存在一个偏差，并且该偏差会随着时间的变得越来越大，目前两者之间时间差异以达到19S。</span></p></li><li><p><span>What kinds of coordinate reference system are often used? How do they be defined?</span>
+<span>（常用坐标参考系及其定义）</span>
+<span>天球参考系：用以描述自然天体或者人造天体在空间中的位置或者方向的一种坐标系。基准面是大地水准面，基准线是铅垂线。</span>
+<span>大地坐标系：大地测量中以参考椭球面为基准面建立起来的坐标系。地面点的位置用大地经度L，大地维度B和大地高H（栏发现到椭球面的距离）表示。</span>
+<span>空间大地直角坐标系空间大地执教坐标系是与大地坐标系相对应的三维大地直角坐标系。以原点0为椭球中心，Z轴与椭球旋转轴一致，指向地球的北极，X轴与椭球赤道面和格林尼治平均子午面的郊县重合，Y轴与XZ平面正交，指向东方，X,Y,Z构成右手坐标系，P点的空间大地直角坐标用（X,Y,Z）表示。</span>
+<span>地心坐标系：建立大地坐标系时，如果选择的旋转椭球时总地球椭球，椭球中心就是地球之心，再定义坐标轴的指向，此时建立的大地坐标系就是地心坐标系。</span></p></li><li><p><span>What kinds of time reference system are often used? How do they be defined?</span>
+<span>（常用时间参考系及其定义）</span>
+<span>Universal Time System 世界时：基于地球自转运动，受到地球自转不均匀变化和极移影响，不稳定。</span>
+<span>Atomic Time System 原子时：基于原子中的能级跃迁和电子发射，非常稳定。</span>
+<span>Coordinated Universal Time, UTC 协调世界时：由于世界时对于高精度的时间应用来说不能满肚要求，而使用原子时又要参考世界时，为了适应需要产生了协调世界时。UTC以原子时度量，需要周期性的对其修正1秒，以保证UT-UTC不大于0.9s。</span>
+<span>GPS Time ：GPST 属于原子时系统，秒长与原子时相等，但是起始点不同于原子时。起始于1980年1月6日00:00:00。</span>
+<span>Julian Day 儒略日： 是在儒略周期内以连续的日数计算时间的计时法。起点是BC 4713年1月1日12:00:00。每一天赋予一个唯一的数字。儒略日数字位数太多，简化儒略日 MJD=JD-2400000.5，MJD的相应起点是1858年11月17日世界时0时。</span></p></li><li><p><span>How to convert a atomic time to a universal time?</span>
+<span>（如何将原子时转换成世界时）</span><br/><span>世界时（UT）基于地球的自转，由于地球自转不稳定，世界时（UT）与协调世界时（UTC）之间有小于0.9s的误差，因此世界时无法简单地与原子时相转换。</span></p></li><li><p><span>How to convert a atomic time to a coordinate universal time?</span>
+<span>（如何将原子时转换成协调世界时）</span>
+<code>UTC=TAI-1s * n</code></p></li><li><p><span>How to convert a GPS time to a atomic time?</span>
+<span>（如何将GPS时间转换成原子时）</span>
+<code>GPST=TAI-19s</code></p></li><li><p><span>How to convert a GPS time to a coordinated universal time?</span>
+<span>（如何将GPS时间转换成协调世界时）</span>
+<code>GPST=UTC+1s * n – 19s</code></p></li><li><p><span>How to convert a Gregorian calendar date to a Julian date?</span>
+<span>（如何将公历日转换成儒略日）</span></p><ol start='' ><li><span>a=(14-month)/12  y=year+4800-a  m=month+12a-3</span></li><li><span>JDN=day+(153m+2)/5+365y+y/4-y/100+y/400-32045</span>
+<span>（做除法时去掉小数部分）</span></li><li><span>JD= JDN + (hour-12)/24 +minute/1440 + second/86400</span>
+<span>January 1, 2000 at 12:00:00 对应儒略日JD=2451545.0</span></li></ol></li><li><p><span>How to convert a Terrestrial coordinate to a Topocentric coordinate?</span>
+<span>（如何将大地坐标转换成地心坐标）</span>
+<code>BLH -&gt; XYZ</code></p></li></ol><p>&nbsp;</p><p>&nbsp;</p></div>
+</body>
+</html>
