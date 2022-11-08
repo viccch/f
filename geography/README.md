@@ -1,10 +1,6 @@
----
-layout: post
-title: "地理学基础 复习大纲"
-date:   2022-10-22 00:00:00 +0800
----
-# 地理学
+# 地理学基础
 自然地理学和人文地理学
+
 ## Contents
 - [Chapter 1 地理科学导论](geography-Chapter-1.md)  
 - [Chapter 2 地球与地球系统](geography-Chapter-2.md)   
