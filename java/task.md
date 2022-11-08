@@ -93,19 +93,7 @@
     }
 ```
 6、	从键盘输入一个字符，用程序来判断这个字符是属于数字，西文字母还是其他字符。
+
 ```java
-    static void fun() {
-        try {
-            char x = (char) System.in.read();
-            System.out.print(x);
-            if (x >= 'a' && x <= 'z' || x >= 'A' && x <= 'Z') {
-                System.out.println("是西文字母");
-            } else if (x >= '0' && x <= '9') {
-                System.out.println("是数字");
-            } else
-                System.out.println("是其它字符");
-        } catch (IOException ioException) {
-            System.out.println(ioException);
-        }
-    }
+//同题2
 ```
