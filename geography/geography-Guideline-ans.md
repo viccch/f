@@ -1,9 +1,7 @@
 ---
 layout: post
-title: "地理学基础 复习大纲ans"
+title: 地理学基础 复习大纲ans
 date:   2022-10-22 00:00:00 +0800
-categories: geography
-toc: true
 ---
 # 地理学基础
 
