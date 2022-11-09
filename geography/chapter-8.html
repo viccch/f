@@ -1,0 +1,767 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style><title>chapter-8</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#人口分布与迁移">人口分布与迁移</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#知识点">知识点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一人文地理学概论">一、人文地理学概论</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一）人文地理学的概念与研究对象key-point）">（一）人文地理学的概念与研究对象（key point）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二）人文地理发展简史">（二）人文地理发展简史</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三）人文地理学的学科特性key-point）">（三）人文地理学的学科特性（key point）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#四）人文地理学研究方法">（四）人文地理学研究方法</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二人口分布与构成">二、人口分布与构成</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一）人口地理学">（一）人口地理学</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二）人口构成">（二）人口构成</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三）人口构成key-point）">（三）人口构成（key point）</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三人口分布">三、人口分布</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#四人口迁移">四、人口迁移</a></div><ul class="outline-children"></ul></li></ul></li></div></div><div id='write'  class=''><ul><li><p><a href='#人口分布与迁移'><span>人口分布与迁移</span></a></p><ul><li><p><a href='#知识点'><span>知识点</span></a></p></li><li><p><a href='#一人文地理学概论'><span>一、人文地理学概论</span></a></p><ul><li><a href='#一人文地理学的概念与研究对象key-point'><span>（一）人文地理学的概念与研究对象（key point）</span></a></li><li><a href='#二人文地理发展简史'><span>（二）人文地理发展简史</span></a></li><li><a href='#三人文地理学的学科特性key-point'><span>（三）人文地理学的学科特性（key point）</span></a></li><li><a href='#四人文地理学研究方法'><span>（四）人文地理学研究方法</span></a></li></ul></li><li><p><a href='#二人口分布与构成'><span>二、人口分布与构成</span></a></p><ul><li><a href='#一人口地理学'><span>（一）人口地理学</span></a></li><li><a href='#二人口构成'><span>（二）人口构成</span></a></li><li><a href='#三人口构成key-point'><span>（三）人口构成（key point）</span></a></li></ul></li><li><p><a href='#三人口分布'><span>三、人口分布</span></a></p></li><li><p><a href='#四人口迁移'><span>四、人口迁移</span></a></p></li></ul></li></ul><h1 id='人口分布与迁移'><span>人口分布与迁移</span></h1><p><span>人文地理学概论</span></p><p><span>人口分布与构成</span></p><p><span>人口增长</span></p><p><span>国内外人口分布</span></p><p><span>人口迁移</span></p><p><span>GIS与人口地理学</span></p><h2 id='知识点'><span>知识点</span></h2><p><span>名词：人口、人口分布、人口密度、人口迁移、</span>
+<span>人口移动、人流动、人口的自然增长、人口</span>
+<span>问题、人口老龄化。</span>
+<span>2、什么是人口密度，是如何分类的？</span>
+<span>3、简要回答中国人口分布的特点。</span>
+<span>4、什么是人文地理学？其主要研究对象有哪</span>
+<span>些，具有什么学科特性。</span>
+<span>5、二战后世界人口迁移具有什么特点？</span>
+<span>6、简要回答GIS在人口地理学中的作用</span></p><h2 id='一人文地理学概论'><span>一、人文地理学概论</span></h2><h3 id='一）人文地理学的概念与研究对象key-point）'><span>（一）人文地理学的概念与研究对象（key point）</span></h3><p><span>人文地理学是研究</span><font color="red"><span>地表人文事象的空间分布及其空间差别</span></font><span>，并预测其</span><font color="red"><span>发展规律</span></font><span>的科学，它是以</span><u><strong><span>人地关系</span></strong></u><span>为基础，着重研究</span><u><span>地表人类活动或人与环境所形成的各种文化现象</span></u><span>的分布与变化。</span></p><p><span>广义人文地理学：包括经济地理学。</span></p><p><img src="pic/2022-11-09-13-57-07.png" referrerpolicy="no-referrer"></p><p><span>研究问题：</span></p><p><span>人文事物的空间分布；人文事物与自然环境之间，不同层次文化要素之间的纵向关系。</span></p><p><u><span>凡是不涉及空间分布和空间过程的问题，均不是人文地理学的问题</span></u><span>。</span></p><p><span>研究对象：</span></p><p><span>人文现象（人文事象、文化景观）：一个疏松的社会文化综合体。</span></p><p><span>人文地理学研究对象的特定内核</span></p><ul><li><span>人地关系</span></li><li><span>区域研究</span></li><li><span>空间分析</span></li></ul><p><span>人文地理学关注地球表面自然现象和人文现象的</span><u><span>区位和空间变化</span></u><span>，强调地方和空间对过程和现象的重要性，着重说明</span><u><span>在什么地方有什么样的人文活动和人文特性，探讨其形成过程，揭示与地理环境的相互关系，并预测其发展变化趋向</span></u><span>。</span></p><h3 id='二）人文地理发展简史'><span>（二）人文地理发展简史</span></h3><h3 id='三）人文地理学的学科特性key-point）'><span>（三）人文地理学的学科特性（key point）</span></h3><ul><li><p><span>社会性</span></p><ul><li><span>人文地理学是社会性较强的地理科学。研究社会现象的地域结构、社会生产方式和社会经济制度；</span></li><li><span>社会性还表现在历史性上：现代人文地理现象作为历史发展的结构和未来发展的起点。</span></li></ul></li><li><p><span>综合性</span></p><ul><li><span>来源于地理事物的多样性、整体性，人文地理学是从整体的角度去研究人文现象。</span></li></ul></li><li><p><span>区域性</span></p><ul><li><span>区域性是地理学的基本特性。人文地理学与其他人文学科的差异，根本点之一在于人文地理学包含了区域研究的特性，重视了区域特性的差异性和相似性。</span></li></ul></li></ul><h3 id='四）人文地理学研究方法'><span>（四）人文地理学研究方法</span></h3><p><span>作为地理学中一门接近人文或社会科学的学科，人文地理学在研究方法上既采用地理学中</span><strong><span>传统</span></strong><span>的方法(如实地调查、运用地图等)和现代方法(如航空像片、卫星像片、地理模型等)，也引进大量的</span><strong><span>社会科学方法</span></strong><span>(如抽样调查、定量技术、心理学和行为学等研究方法)。</span></p><h2 id='二人口分布与构成'><span>二、人口分布与构成</span></h2><h3 id='一）人口地理学'><span>（一）人口地理学</span></h3><p><span>人口地理学的概念（key point）：</span></p><p><span>研究在一定历史条件下人口分布、人口构成、人口变动和人口增长的空间变化，及其与自然环境和社会经济环境的关系的学科。</span></p><p><span>人口地理学与人口学的关系</span></p><p><span>人口地理学</span><strong><span>着眼于人口现象的空间</span></strong><span>方面，人口地理学借助人口学的基本理论、数据和方法，具有</span><strong><span>地理学和人口学之间边缘学科</span></strong><span>的性质。</span></p><p><span>人口地理学的基本内容（key point）</span></p><p><font color="red"><span>研究人口地理分布，人口变动、人口迁移，人口增长，人口构成，劳动力资源，人口承载能力等</span></font></p><p><span>人口地理学发展简史</span></p><ul><li><span>中国《汉书 地理志》</span></li><li><span>1798年英国经济学家马尔萨斯《人口论》</span></li><li><span>1804年人文地理学创始人李特尔《欧洲地理》</span></li><li><span>1891年拉采尔《人类地理学》</span></li><li><span>1926年竺可桢发表了对江苏、浙江省人口密度研究的论文</span></li><li><span>1931年几年后胡焕庸提出中国人口分布的密度差异的重要概念（key point）</span></li><li><span>二战后美国的特里瓦撒和齐林斯基、法国的博热·加涅埃、英国的克拉克、等人的著作在国际上都有一定的影响。</span></li><li><span>1966年齐林斯基指出人口地理学可分为：描述人口数量和特性的地理位置；解释人口数量和特性的空间表现形态；人口现象的地理分析</span></li><li><span>1970年代以来，美国一些人口地理学家特别关注人口的重新分布和政府的人口政策，对城市化过程也作了大量研究，还探讨了国际人口迁移趋势以及国际移民计划</span></li></ul><h3 id='二）人口构成'><span>（二）人口构成</span></h3><p><span>人口：生活在一定社会生产方式、一定时间，居住在一定地域，实现其生命活动并构成社会生活主体，具有一定数量和质量的人所组成的社会群体。</span></p><p><span>人口分布：是指一定时间内人口在一定地区范围的空间分布状况，是人口过程在空间的表现形式。</span></p><p><span>人口分布的测度——人口密度：人口密度一般被看做是衡量人口分布的主要指标，它反应一定地区的人口密集程度，是指单位土地面积上居住的人口数。</span></p><p><span>人口密度的弊端：</span></p><ul><li><span>只是一个平均数，掩盖了内部差异</span></li><li><span>范围越小，越能反映人口分布的现实</span></li><li><span>是人口与抽象空间的比较，反映的人地关系不具体、不精确</span></li><li><span>不具有功能特性，难以揭示演变趋势</span></li></ul><p><span>人口数量</span>
+<img src="pic/2022-11-09-14-14-46.png" referrerpolicy="no-referrer"></p><h3 id='三）人口构成key-point）'><span>（三）人口构成（key point）</span></h3><p><code>人口构成</code><span>是指</span><font color="red"><span>具有不同自然的、社会经济的、地域特征的人口之间的比例关系，即各特征的人口数在人口总数中的百分比，也称人口结构</span></font><span>。人口结构包括</span><u><strong><span>自然结构、社会经济结构和地域结构</span></strong></u><span>。人口的自然结构根据人口自然地理生理特征划分，主要包括人口的年龄、性别、种族结构等。</span></p><p><span>1.</span><strong><font color="red"><span>性别构成</span></font></strong><span>：男性人口与女性人口数量在总人口中的比例关系。</span></p><p><span>影响因素：</span></p><ul><li><span>出生婴儿性别比例：受胎时男女120：100，男胎在妊娠期间流产、死胎的机率较大。到出生时，比例降为105</span></li><li><span>男女分令死亡率：生育观念问题，使0~1岁人口的性别比例高出许多；社会分工、战争等原因，在各个年龄组成中，男性的死亡率比女性高，使性别比例差距逐年减小。</span></li><li><span>人口迁移和社会生产部门对性别的选择性：劳动力跨区域迁移，多以青年男性为主。重工业、采矿业、林业、渔业、交通、建筑、地勘等生产部门男性比例较高。</span></li></ul><p><span>2.</span><strong><font color="red"><span>年龄构成</span></font></strong><span>：是各年龄组人口数量在总人口中的比例关系。通常用各年龄组人口占总人口的百分数来表示。</span></p><p><span>衡量人口年龄构成的指标：</span>
+<span>老年人口比重、少年儿童比重、老年指数（又称老人、儿童比例，即老少比）、抚养指数（又称负担系数）、年龄中位数、平均年龄等。这些指数都从不同的侧面说明了人口年龄构成的特点。</span></p><p><span>对人口本身再生产的影响：</span></p><ul><li><span>瑞典人口学家桑德巴的人口再生产的类型。</span></li><li><span>在人口统计学中，按年龄构成和中位年龄所做的类似划分。这两种划分方法都反映了人口年龄构成与人口再生产的关系。</span></li></ul><p><span>对区域发展的影响：</span></p><ul><li><span>首先表现在劳动适龄人口同被抚养人口的比例关系上。</span></li><li><span>其次，处在不同生长发育阶段的人口对社会环境出生率、死亡率和人口迁移；战争、饥荒、瘟疫等有不同的影响和要求，社会的物质消费结构、各类文化教育设施的配套、医疗卫生和社会保障事业的发展、住宅和交通的建设，莫不与人口年龄构成有关，当人口年龄构成发生变动以后，有关的一切社会职能均要随之有相应的变化。经济文化建设如不考虑人口文化构成的变化趋势及其可能带来影响，就难以同未来的社会需求相适应，从而陷于被动的地位。</span></li></ul><p><span>人口负担系数（Dependency Ratio）：</span>
+<span>某一人口中非劳动年龄人口（≤14岁的少儿人口和≥65岁的老年人口）与劳动年龄人口（15~64岁人口）之比，分为少儿负担系数、老年负担系数和总负担系数。</span></p><p><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="39.535ex" height="15.095ex" role="img" focusable="false" viewBox="0 -3586 17474.3 6672" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -6.982ex;"><defs><path id="MJX-15-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-15-TEX-N-2264" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path><path id="MJX-15-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-15-TEX-N-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path id="MJX-15-TEX-N-35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path id="MJX-15-TEX-N-223C" d="M55 166Q55 241 101 304T222 367Q260 367 296 349T362 304T421 252T484 208T554 189Q616 189 655 236T694 338Q694 350 698 358T708 367Q722 367 722 334Q722 260 677 197T562 134H554Q517 134 481 152T414 196T355 248T292 293T223 311Q179 311 145 286Q109 257 96 218T80 156T69 133Q55 133 55 166Z"></path><path id="MJX-15-TEX-N-36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path><path id="MJX-15-TEX-N-D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path><path id="MJX-15-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path id="MJX-15-TEX-N-25" d="M465 605Q428 605 394 614T340 632T319 641Q332 608 332 548Q332 458 293 403T202 347Q145 347 101 402T56 548Q56 637 101 693T202 750Q241 750 272 719Q359 642 464 642Q580 642 650 732Q662 748 668 749Q670 750 673 750Q682 750 688 743T693 726Q178 -47 170 -52Q166 -56 160 -56Q147 -56 142 -45Q137 -36 142 -27Q143 -24 363 304Q469 462 525 546T581 630Q528 605 465 605ZM207 385Q235 385 263 427T292 548Q292 617 267 664T200 712Q193 712 186 709T167 698T147 668T134 615Q132 595 132 548V527Q132 436 165 403Q183 385 203 385H207ZM500 146Q500 234 544 290T647 347Q699 347 737 292T776 146T737 0T646 -56Q590 -56 545 0T500 146ZM651 -18Q679 -18 707 24T736 146Q736 215 711 262T644 309Q637 309 630 306T611 295T591 265T578 212Q577 200 577 146V124Q577 -18 647 -18H651Z"></path><path id="MJX-15-TEX-N-2265" d="M83 616Q83 624 89 630T99 636Q107 636 253 568T543 431T687 361Q694 356 694 346T687 331Q685 329 395 192L107 56H101Q83 58 83 76Q83 77 83 79Q82 86 98 95Q117 105 248 167Q326 204 378 228L626 346L360 472Q291 505 200 548Q112 589 98 597T83 616ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path><path id="MJX-15-TEX-N-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtable"><g data-mml-node="mtr" transform="translate(0,2160)"><g data-mml-node="mtd" transform="translate(456.9,0)"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">少</text></g><g data-mml-node="mtext" transform="translate(877.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">儿</text></g><g data-mml-node="mtext" transform="translate(1755.1,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">负</text></g><g data-mml-node="mtext" transform="translate(2632.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">担</text></g><g data-mml-node="mtext" transform="translate(3510.2,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">系</text></g><g data-mml-node="mtext" transform="translate(4387.7,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">数</text></g><g data-mml-node="mo" transform="translate(5543.1,0)"><use data-c="3D" xlink:href="#MJX-15-TEX-N-3D"></use></g><g data-mml-node="mfrac" transform="translate(6598.8,0)"><g data-mml-node="mrow" transform="translate(858.9,676)"><g data-mml-node="mo"><use data-c="2264" xlink:href="#MJX-15-TEX-N-2264"></use></g><g data-mml-node="mn" transform="translate(1055.8,0)"><use data-c="31" xlink:href="#MJX-15-TEX-N-31"></use><use data-c="34" xlink:href="#MJX-15-TEX-N-34" transform="translate(500,0)"></use></g><g data-mml-node="mtext" transform="translate(2055.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">岁</text></g><g data-mml-node="mtext" transform="translate(2933.3,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">人</text></g><g data-mml-node="mtext" transform="translate(3810.9,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">口</text></g></g><g data-mml-node="mrow" transform="translate(220,-710)"><g data-mml-node="mn"><use data-c="31" xlink:href="#MJX-15-TEX-N-31"></use><use data-c="35" xlink:href="#MJX-15-TEX-N-35" transform="translate(500,0)"></use></g><g data-mml-node="mo" transform="translate(1277.8,0)"><use data-c="223C" xlink:href="#MJX-15-TEX-N-223C"></use></g><g data-mml-node="mn" transform="translate(2333.6,0)"><use data-c="36" xlink:href="#MJX-15-TEX-N-36"></use><use data-c="34" xlink:href="#MJX-15-TEX-N-34" transform="translate(500,0)"></use></g><g data-mml-node="mtext" transform="translate(3333.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">岁</text></g><g data-mml-node="mtext" transform="translate(4211.1,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">人</text></g><g data-mml-node="mtext" transform="translate(5088.7,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">口</text></g></g><rect width="6166.2" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(13227.3,0)"><use data-c="D7" xlink:href="#MJX-15-TEX-N-D7"></use></g><g data-mml-node="mn" transform="translate(14227.5,0)"><use data-c="31" xlink:href="#MJX-15-TEX-N-31"></use><use data-c="30" xlink:href="#MJX-15-TEX-N-30" transform="translate(500,0)"></use><use data-c="30" xlink:href="#MJX-15-TEX-N-30" transform="translate(1000,0)"></use></g><g data-mml-node="mi" transform="translate(15727.5,0)"><use data-c="25" xlink:href="#MJX-15-TEX-N-25"></use></g></g></g><g data-mml-node="mtr" transform="translate(0,-676)"><g data-mml-node="mtd" transform="translate(456.9,0)"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">老</text></g><g data-mml-node="mtext" transform="translate(877.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">年</text></g><g data-mml-node="mtext" transform="translate(1755.1,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">负</text></g><g data-mml-node="mtext" transform="translate(2632.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">担</text></g><g data-mml-node="mtext" transform="translate(3510.2,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">系</text></g><g data-mml-node="mtext" transform="translate(4387.7,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">数</text></g><g data-mml-node="mo" transform="translate(5543.1,0)"><use data-c="3D" xlink:href="#MJX-15-TEX-N-3D"></use></g><g data-mml-node="mfrac" transform="translate(6598.8,0)"><g data-mml-node="mrow" transform="translate(858.9,676)"><g data-mml-node="mo"><use data-c="2265" xlink:href="#MJX-15-TEX-N-2265"></use></g><g data-mml-node="mn" transform="translate(1055.8,0)"><use data-c="36" xlink:href="#MJX-15-TEX-N-36"></use><use data-c="35" xlink:href="#MJX-15-TEX-N-35" transform="translate(500,0)"></use></g><g data-mml-node="mtext" transform="translate(2055.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">岁</text></g><g data-mml-node="mtext" transform="translate(2933.3,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">人</text></g><g data-mml-node="mtext" transform="translate(3810.9,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">口</text></g></g><g data-mml-node="mrow" transform="translate(220,-710)"><g data-mml-node="mn"><use data-c="31" xlink:href="#MJX-15-TEX-N-31"></use><use data-c="35" xlink:href="#MJX-15-TEX-N-35" transform="translate(500,0)"></use></g><g data-mml-node="mo" transform="translate(1277.8,0)"><use data-c="223C" xlink:href="#MJX-15-TEX-N-223C"></use></g><g data-mml-node="mn" transform="translate(2333.6,0)"><use data-c="36" xlink:href="#MJX-15-TEX-N-36"></use><use data-c="34" xlink:href="#MJX-15-TEX-N-34" transform="translate(500,0)"></use></g><g data-mml-node="mtext" transform="translate(3333.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">岁</text></g><g data-mml-node="mtext" transform="translate(4211.1,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">人</text></g><g data-mml-node="mtext" transform="translate(5088.7,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">口</text></g></g><rect width="6166.2" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(13227.3,0)"><use data-c="D7" xlink:href="#MJX-15-TEX-N-D7"></use></g><g data-mml-node="mn" transform="translate(14227.5,0)"><use data-c="31" xlink:href="#MJX-15-TEX-N-31"></use><use data-c="30" xlink:href="#MJX-15-TEX-N-30" transform="translate(500,0)"></use><use data-c="30" xlink:href="#MJX-15-TEX-N-30" transform="translate(1000,0)"></use></g><g data-mml-node="mi" transform="translate(15727.5,0)"><use data-c="25" xlink:href="#MJX-15-TEX-N-25"></use></g></g></g><g data-mml-node="mtr" transform="translate(0,-2836)"><g data-mml-node="mtd"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">总</text></g><g data-mml-node="mtext" transform="translate(877.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">负</text></g><g data-mml-node="mtext" transform="translate(1755.1,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">担</text></g><g data-mml-node="mtext" transform="translate(2632.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">系</text></g><g data-mml-node="mtext" transform="translate(3510.2,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">数</text></g><g data-mml-node="mo" transform="translate(4665.5,0)"><use data-c="3D" xlink:href="#MJX-15-TEX-N-3D"></use></g><g data-mml-node="mtext" transform="translate(5721.3,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">少</text></g><g data-mml-node="mtext" transform="translate(6598.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">儿</text></g><g data-mml-node="mtext" transform="translate(7476.4,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">负</text></g><g data-mml-node="mtext" transform="translate(8353.9,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">担</text></g><g data-mml-node="mtext" transform="translate(9231.5,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">系</text></g><g data-mml-node="mtext" transform="translate(10109,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">数</text></g><g data-mml-node="mo" transform="translate(11208.8,0)"><use data-c="2B" xlink:href="#MJX-15-TEX-N-2B"></use></g><g data-mml-node="mtext" transform="translate(12209,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">老</text></g><g data-mml-node="mtext" transform="translate(13086.6,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">年</text></g><g data-mml-node="mtext" transform="translate(13964.1,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">负</text></g><g data-mml-node="mtext" transform="translate(14841.7,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">担</text></g><g data-mml-node="mtext" transform="translate(15719.2,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">系</text></g><g data-mml-node="mtext" transform="translate(16596.8,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">数</text></g></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mtable rowspacing=".5em" columnspacing="1em" displaystyle="true"><mtr><mtd><mtext>少</mtext><mtext>儿</mtext><mtext>负</mtext><mtext>担</mtext><mtext>系</mtext><mtext>数</mtext><mo>=</mo><mfrac><mrow><mo>≤</mo><mn>14</mn><mtext>岁</mtext><mtext>人</mtext><mtext>口</mtext></mrow><mrow><mn>15</mn><mo>∼</mo><mn>64</mn><mtext>岁</mtext><mtext>人</mtext><mtext>口</mtext></mrow></mfrac><mo>×</mo><mn>100</mn><mi mathvariant="normal">%</mi></mtd></mtr><mtr><mtd><mtext>老</mtext><mtext>年</mtext><mtext>负</mtext><mtext>担</mtext><mtext>系</mtext><mtext>数</mtext><mo>=</mo><mfrac><mrow><mo>≥</mo><mn>65</mn><mtext>岁</mtext><mtext>人</mtext><mtext>口</mtext></mrow><mrow><mn>15</mn><mo>∼</mo><mn>64</mn><mtext>岁</mtext><mtext>人</mtext><mtext>口</mtext></mrow></mfrac><mo>×</mo><mn>100</mn><mi mathvariant="normal">%</mi></mtd></mtr><mtr><mtd><mtext>总</mtext><mtext>负</mtext><mtext>担</mtext><mtext>系</mtext><mtext>数</mtext><mo>=</mo><mtext>少</mtext><mtext>儿</mtext><mtext>负</mtext><mtext>担</mtext><mtext>系</mtext><mtext>数</mtext><mo>+</mo><mtext>老</mtext><mtext>年</mtext><mtext>负</mtext><mtext>担</mtext><mtext>系</mtext><mtext>数</mtext></mtd></mtr></mtable></math></mjx-assistive-mml></mjx-container><script type="math/tex">少儿负担系数=\frac{\leq14岁人口}{15\sim 64岁人口}\times 100\%\\老年负担系数=\frac{\geq65岁人口}{15\sim 64岁人口}\times 100\%\\总负担系数=少儿负担系数+老年负担系数\\</script>
+<em><span>人口赢利期：总抚养比&lt;50%</span></em></p><p><strong><span>人口老龄化（key point）：</span></strong>
+<span>（Population aging），指一个人口总体中的中老年人口所占比例不断增加，抑或青少年人口所占比例不断递减这样一种渐进过程。</span></p><p><span>老龄化成因：</span></p><ul><li><span>寿命延长</span></li><li><span>妇女社会地位提高，受教育程度提高，选择晚婚晚育，不婚不育</span></li></ul><p><span>几点结论：</span>
+<span>1）世界人口老龄化大致显现于</span><u><span>20世纪70年代</span></u><span>，伴随这一“银发浪潮”的来临，</span><u><span>21世纪上半叶，全球人口老龄化将呈加速发展态势</span></u><span>。</span>
+<span>2）世界各国人口老龄化进程参差不齐，</span><u><span>欠发达地区</span></u><span>正在成为世界人口老龄化的主导力量。</span>
+<span>3）纵观前后一百年间世界人口老龄化态势，全球人口老龄化格局正在从“三分天下”走向“一统天下”。1997年“世界老年大会”提出：</span><u><span>展望21世纪，全球只有一个老龄化前途</span></u><span>。</span></p><p><span>中国人口老龄化的特点：</span></p><p><span>速成性：人口年龄结构从“成年型”转向“老年型”的时间远远短于西方国家。</span></p><p><span>巨量性：老年人口绝对量居世界之首。</span></p><p><span>超前性：未富先老。发达国家进入“老年型”社会时人均国民生产总值4000美元，我国在世纪之交成为“老年型”国家只有850美元。</span></p><p><span>人口红利（key point）：</span>
+<span>（Population bonus）是人口转变进程中出现的特定阶段，</span><em><span>劳动年龄人口规模扩展，比例上升（“人手”增加），人口抚养比下降（“人口”减少）</span></em><span>，形成一种</span><strong><u><span>有利于经济快速增长</span></u></strong><span>的年龄结构或人口机会窗口。</span></p><p><span>人口红利对经济增长的贡献：</span><strong><span>人口红利所提供的充裕劳动力和较轻的人口抚养比</span></strong><span>（key point）</span></p><p><span>3.</span><strong><font color="red"><span>职业构成</span></font></strong><span>：</span>
+<span>概念：</span>
+<span>是指区域人口中，劳动人口在各个社会部门分配的比例，亦即各部门劳动职工或工作人员占在职人员总数的比例。它代表经济活动人口的就业分布，从一定角度反映了区域经济发展和生产布局特征。</span></p><p><span>国际划分：</span>
+<span>一般将经济活动分为九个部门，即：①农业，包括林业、狩猎业和渔业在内；②采矿、采石业；③制造业，或称加工工业；④电力、煤气和供水；⑤建筑业；⑥商业和服务业（旅馆旅游业等）；⑦交通运输业和邮电业；⑧金融保险业；⑨公共和社会服务。并将上述①部门称为第一产业，②、③、④、⑤称为第二产业，⑥、⑦、⑧、⑨称为第三产业。</span></p><p><span>我国划分：</span>
+<span>将经济活动分为16个部门，即：①农、林、牧、渔业；②采掘业；③制造业；④电力、煤气及水的生产和供应业；⑤建筑业；⑥地质勘查业、水利管理业；⑦交通运输、仓储及邮电通讯业；⑧批发和零售贸易、餐饮业；⑨金融保险业；10房地产业；11社会服务业；12卫生、体育和社会福利业；13教育、文化艺术和广播电影电视业；14科学研究和综合技术服务业；15国家机关、党政机关和社会团体；16其它行业。并将①部门（农业）称为第一产业，②、③、④、⑤、⑥部门（工业）称为第二产业，其余部门为第三产业。</span></p><p><span>影响因素：</span>
+<span>生产力发展水平; 生产方式特点; 不同部门劳动生产率变化;科技发展; 物质消费; 劳务交换水平; 经济政策; 历史 地理因素。</span></p><p><span>4.</span><strong><font color="red"><span>民族构成</span></font></strong><span>：</span></p><p><span>概念：指不同民族的人口数量在总人口中的比例关系。通常以百分数 来表示。民族不同于种族，它是人们在历史上形成的一个有共同 语言、共同地域、共同经济生活以及表现在共同文化上的共同心 理素质的稳定的共同体。</span></p><p><span>分析：在民族构成分析中，除对各民族人口数量占区域人口比例的分析 外，还应对各民族在文化、宗教、习俗等方面的特征进行了解， 以便为制定合理的区域发展规划和政策提供可靠依据。</span></p><p><del><span>5.人口素质构成</span></del>
+<span>人口素质即人口素质，包括三个方面，即身体素质、文化技术素质和思想素质。身体素质是人口素质发展的自然基础，指人的体质和智力；文化技术素质是指人口受文化科技教育与训练的程度；思想素质包括思想觉悟、道德品质、传统习惯等。</span></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='三人口分布'><span>三、人口分布</span></h2><h2 id='四人口迁移'><span>四、人口迁移</span></h2><p><font color="red"><span>red</span></font></p></div></div>
+
+<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script></body>
+</html>
