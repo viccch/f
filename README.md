@@ -6,6 +6,5 @@
 - [计算机网络](ComputerNetwork/)
 - [测量平差](SpaticalERROR/)
 
-![Lena](Lena.bmp)
 
 

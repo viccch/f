@@ -16,7 +16,7 @@
 - [Chapter 12 文化与宗教](chapter-11.md)
 - [guideline-ans](guideline-ans.md)
 
-- [阅读材料——北京，有2000万人假装在生活](北京，有2000万人假装在生活.html)
+- [阅读材料——北京，有2000万人假装在生活](peking.html)
 
 # 《人文地理学》
 
