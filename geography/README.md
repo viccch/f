@@ -16,7 +16,7 @@
 - [Chapter 11 产业与发展](chapter-10.md)
 - [Chapter 12 文化与宗教](chapter-11.md)
 - [人文地理学复习总结](guideline2-ans.md)
-- [阅读材料——北京，有2000万人假装在生活](peking.html)
+- [阅读材料——北京，有2000万人假装在生活](peking.md)
 - [阅读材料——人骨、人皮和人肉——密教仪式的往日世界](https://zhuanlan.zhihu.com/p/24871478)
 - [阅读材料——亮出你的舌苔或空空荡荡](la.md)
 
