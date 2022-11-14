@@ -1,10 +1,11 @@
-#import statistics
-#import m_variance as var
+
 import numpy
 
-arr1 = [1, 0, 2, -2, -1]
-arr2 = [-2, 3, -2, 2, -3]
-
-# 总体方差
-print(numpy.var(arr1))
-print(numpy.std(arr1))
+A = numpy.mat(
+    [[0,0,1,0,-1,-1],
+     [1,1,1,0,0,0],
+     [0,-1,0,1,0,-1]])
+P = numpy.eye(6)
+B=numpy.mat([[5.25],[0],[-3.75]])
+#N = A*P*(A.transpose())
+print(P*(A.transpose())*B)
