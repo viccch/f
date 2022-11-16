@@ -1,34 +1,8 @@
 ---
 layout: post
-title: "遥感原理与应用"
-catalogies: RemoteSense
+title: 遥感原理与应用 chapter 1 绪论
 ---
 
-lecture data : Oct,19,2022 
-# 遥感原理与应用
-
-## 网络教学资源
-- bilibili.com Remote Sensing 遥感 会议、视频、讲课。
-- icourse163 武汉大学 遥感技术与发展 龚。
-- icourse163 南京信息工程大学 遥感原理 祝善友。
-- crisp.nus.edu.sg 新加坡国立大学 Principles of Remote Sensing 
-- remotesensing.usgs.gov 美国地质调查局土地遥感计划（USGS Land Remote Sensing Program）
-
-为什么学 RS?**空间信息获取的重要手段。**
-
-## 目录
-- 绪论
-- 遥感物理基础
-- 遥感传感器与信息获取
-- 遥感图像处理技术
-- 遥感数字图像预处理
-- 遥感图像分类
-- 遥感应用与前沿
-
-
-- [遥感原理与应用](#遥感原理与应用)
-  - [网络教学资源](#网络教学资源)
-  - [目录](#目录)
 - [Chapter 1 绪论](#chapter-1-绪论)
   - [1.1 遥感概念](#11-遥感概念)
   - [1.2 遥感系统组成](#12-遥感系统组成)

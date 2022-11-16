@@ -1,7 +1,0 @@
-{
-    "pasteImage.path": "${currentFileDir}\\pic",
-    "pasteImage.showFilePathConfirmInputBox": true,
-    "pasteImage.filePathConfirmInputBoxMode": "onlyName",
-    "editor.fontSize": 16,
-    "pasteImage.defaultName": "Y-MM-DD-HH-mm-ss",
-}
