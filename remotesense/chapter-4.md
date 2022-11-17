@@ -81,7 +81,7 @@ A/D转换
 | 中值     | $f(i,j)=\frac{f_{max}(i,j)-f_{min}(i,j)}{2}$                 | 图像所有灰度级中处于中间的值               |
 | 众数     | ~                                                            | 图像中出现最多次数的灰度值                 |
 | 灰度值域 | $f_{range}(i,j)=f_{max}(i,j)-f_{min}(i,j)$                   | 灰度值的变化程度                           |
-| 反差     | $\begin{aligned} C_1=f_{max}/f_{min}\\C_2=f_range\\C_3=S\end{aligned}$ | 反映图像的显示效果和可分辨性               |
+| 反差     | $$\begin{aligned} C_1=f_{max}/f_{min}\\C_2=f_range\\C_3=S\end{aligned}$$ | 反映图像的显示效果和可分辨性               |
 | 方差     | $S^2=\frac{\sum_{i=0}^{M-1}\sum_{j=0}^{N-1}[f(i,j)-f]^2}{MN}$ | 反映各像元灰度值域图像平均值的总的离散程度 |
 
 
