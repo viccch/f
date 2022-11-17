@@ -1,22 +1,25 @@
-# git ignore
+# # git ignore
 
-# Not Current Used
+# # Not Current Used
 
-# By Folder
-**/ppt
-**/pdf
-debug/
 
-# By File Extension Name
-*.doc
-*.docx
-*.pdf
-*.pptx
-*.ppt
-*.zip
-*.rar
-*.url
-*.lnk
-*.exe
-*.gz
-*.log
+# # By Folder
+# **/ppt
+# **/pdf
+# debug/
+
+# # By File Extension Name
+# *.doc
+# *.docx
+# *.pdf
+# *.pptx
+# *.ppt
+# *.zip
+# *.rar
+# *.url
+# *.lnk
+# *.exe
+# *.gz
+# *.log
+
+
