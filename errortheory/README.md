@@ -9,3 +9,14 @@
 - [chapter 4 间接平差](4.md)
 - [chapter 5](5.md)
 - [chapter 6](6.md)
+
+## 作业
+- [第1次作业](questions/1.md)
+- [第2次作业](questions/2.md)
+- [第3次作业](questions/3.md)
+- [第4次作业](questions/4.md)
+- [第5次作业](questions/5.md)
+- [第6次作业](questions/6.md)
+
+## Tools
+- [PPT Download](scripts/m_img_download.py)

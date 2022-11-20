@@ -2,3 +2,6 @@
 !/.gitignore
 !/pic
 !/*.md
+!/*.html
+!/questions
+!/scripts
