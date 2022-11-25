@@ -19,4 +19,3 @@
 - [第6次作业](questions/6.md)
 
 ## Tools
-- [PPT Download](scripts/m_img_download.py)
