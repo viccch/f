@@ -6,8 +6,8 @@ from urllib import request
 
 
 n_from = 1  # 起始页码
-n_to = 32  # 结束页码
-base_url = "https://s3.ananas.chaoxing.com/sv-w9/doc/6c/c0/87/1b4922800c9dcd5a2437a4f86975b976/thumb/"
+n_to = 33  # 结束页码
+base_url = "https://s3.ananas.chaoxing.com/sv-w9/doc/1b/7c/6a/bf7eabbb660e9617e380309d3a72e103/thumb/"
 
 for i in range(n_from, n_to+1, 1):
     img_name = str(i)+".png"
